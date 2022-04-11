@@ -1,0 +1,29 @@
+#include <ESP8266WiFi.h>
+
+void setup() {
+ 
+  Serial.begin(9600);
+  //Code for put NodeMcu ESP8266 on Access Point mode
+ WiFi.softAP("NodeMCU", "00000000");
+  Serial.println();
+  Serial.println("NodeMCU Started!");
+  Serial.println(WiFi.softAPIP());
+  
+ delay(15*60*1000); // delay for 15 minute
+
+ // Code for put NodeMcu ESP8266 on wifi connection mode
+  WiFi.begin("1234", "00000000");
+   while(WiFi.status() != WL_CONNECTED)
+  {
+    Serial.print("not connected");
+    delay(200);
+    }
+   Serial.println();
+   Serial.println("Nodemcu is connected");
+   Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
