@@ -1,0 +1,14 @@
+void setup() {
+  // put your setup code here, to run once:
+pinMode(5,OUTPUT);
+TCCR0A=0; // reset the reristor
+TCCR0B=0; // reset the register
+TCCR0A=0b01010011;  // fast pwm mode
+TCCR0B=0b00001010; // set prescale 8
+OCR0A=9; // set frequency 100khz
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
